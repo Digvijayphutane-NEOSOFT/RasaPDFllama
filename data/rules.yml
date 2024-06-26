@@ -1,0 +1,27 @@
+version: "3.1"
+
+rules:
+  # - rule: general information
+  #   steps:
+  #     - intent: general_info
+  #     - action: action_respond_general_info
+
+  - rule: Trigger transfer form
+    steps:
+      - intent: bank_transfer
+      - action: action_confirm_transfer
+
+  # - rule: Execute classify intent on inform1
+  #   steps:
+  #     - intent: other
+  #     - action: action_classify_intent
+
+  - rule: Goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Greeting
+    steps:
+      - intent: greet
+      - action: utter_greet

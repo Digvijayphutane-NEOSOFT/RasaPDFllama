@@ -1,0 +1,21 @@
+version: "3.1"
+
+stories:
+- story: user confirms transfer
+  steps:
+  - intent: bank_transfer
+  - action: action_confirm_transfer
+  - intent: confirm_yes
+  - action: action_handle_bank_transfer
+
+- story: user cancels transfer
+  steps:
+  - intent: bank_transfer
+  - action: action_confirm_transfer
+  - intent: confirm_no
+  - action: utter_transfer_cancelled
+
+- story: Generate summary from PDF
+  steps:
+  - intent: general_info
+  - action: action_generate_summary
